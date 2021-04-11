@@ -14,14 +14,12 @@ html {
 
 main {
   max-width: 1400px;
-  max-height: 595px;
   margin: 0 auto;
   padding: 100px 0px 109px 0px;
 }
 
 footer {
   max-width: 1400px;
-  max-height: 595px;
   margin: 0 auto;
 }
 
@@ -30,6 +28,7 @@ footer {
   font-size: 2.57rem;
   line-height: 3rem;
   color: #212121;
+  position: relative;
 }
 
 h2.heading::after {
@@ -40,18 +39,23 @@ h2.heading::after {
   display: flex;
 }
 
-#heading_main::after {
+h2.line_red::after {
   content: "";
   margin-top: 25px;
   margin-bottom: 30px;
   background-color: #E72424;
 }
 
-#heading_footer::after {
+h2.line_light::after {
   content: "";
   margin-top: 48px;
   margin-bottom: 30px;
   background-color: #FFFFFF;
+}
+
+.heading_footer {
+  padding-top: 76px;
+  color: #FFFFFF;
 }
 
 .text_main {
@@ -66,6 +70,7 @@ h2.heading::after {
   font-size: 1.14rem;
   line-height: 1.36rem;
   color: rgba(255, 255, 255, 0.8);
+  position: relative;
 }
 
 .text_footer_copyright {
@@ -129,19 +134,22 @@ h2.heading::after {
   height: 325px;
   background-image: url(images/background_images/backimg.svg);
   overflow: hidden;
+  position: relative;
   }
 
-.blackout {
+.image_background::after {
+  content: '';
   background: rgba(0, 0, 0, .65);
-  width:100%;
-  height:100%;
-  top:0px;
-  left:0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 100%;
 }
 
-#heading_footer {
-  padding-top: 76px;
-  color: #FFFFFF;
+.image_background *{
+  z-index: 1;
 }
 
 .btn {
